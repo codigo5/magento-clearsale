@@ -1,0 +1,7 @@
+{
+  "name": "codigo5/magento-clearsale",
+  "type": "magento-module",
+  "require": {
+    "php": ">=5.4"
+  }
+}
