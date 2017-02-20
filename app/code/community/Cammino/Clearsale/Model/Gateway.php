@@ -161,9 +161,9 @@ class Cammino_Clearsale_Model_Gateway {
 
 	public function getBaseUrl() {
 		if (Mage::getStoreConfig("payment_services/clearsale/environment") == 'homolog'){
-			$url = 'http://homolog.clearsale.com.br/start/Entrada/EnviarPedido.aspx';
+			$url = 'https://homolog.clearsale.com.br/start/Entrada/EnviarPedido.aspx';
 		} else {
-    		$url = 'http://www.clearsale.com.br/start/Entrada/EnviarPedido.aspx';
+    		$url = 'https://www.clearsale.com.br/start/Entrada/EnviarPedido.aspx';
 		}
 
     	return $url;
@@ -175,7 +175,7 @@ class Cammino_Clearsale_Model_Gateway {
 		$url = $this->getBaseUrl();
     	$data = $this->serializeData($data);
 	    $ch = curl_init();
-	    
+
 	    curl_setopt($ch, CURLOPT_POST, 1);
 	    curl_setopt($ch, CURLOPT_POSTFIELDS,  $data);
 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -184,7 +184,7 @@ class Cammino_Clearsale_Model_Gateway {
 	    curl_setopt($ch, CURLOPT_FAILONERROR, true);
 	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 	    curl_setopt($ch, CURLOPT_TIMEOUT, 40);
-	    
+
 	    $returnString = curl_exec($ch);
 	    curl_close($ch);
 
